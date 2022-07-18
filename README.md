@@ -14,4 +14,4 @@
 
 ## API Endpoints
 
-![endpoints](./docs/endpoint.PNG)
+![endpoints](./docs/endpoint.png)
