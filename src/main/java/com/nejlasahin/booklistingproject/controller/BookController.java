@@ -30,18 +30,21 @@ public class BookController {
     @Operation(tags = "Book Controller")
     @GetMapping(BookEndpoint.GET_ALL)
     public ResponseEntity<RestResponse<List<BookResponse>>> getAll() {
-        return ResponseEntity.status(HttpStatus.OK).body(RestResponse.of(bookService.findAll()));
+        List<BookResponse> responseList = bookService.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(RestResponse.of(responseList));
     }
 
     @Operation(tags = "Book Controller")
     @PostMapping(BookEndpoint.ADD)
     public ResponseEntity<RestResponse<BookResponse>> add(@RequestBody @Valid BookRequest request) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(RestResponse.of(bookService.add(request)));
+        BookResponse response = bookService.add(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(RestResponse.of(response));
     }
 
     @Operation(tags = "Book Controller")
     @PutMapping(BookEndpoint.EDIT)
     public ResponseEntity<RestResponse<BookResponse>> edit(@PathVariable String bookId, @RequestBody @Valid BookRequest request) {
-        return ResponseEntity.status(HttpStatus.OK).body(RestResponse.of(bookService.edit(bookId, request)));
+        BookResponse response = bookService.edit(bookId, request);
+        return ResponseEntity.status(HttpStatus.OK).body(RestResponse.of(response));
     }
 }

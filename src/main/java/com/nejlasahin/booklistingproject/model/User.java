@@ -6,8 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,12 +22,24 @@ import java.util.Set;
 public class User {
 
     @Id
+    @Field("id")
     private String id;
 
+    @Indexed
+    @Field("username")
     private String username;
+
+    @Field("first_name")
     private String firstName;
+
+    @Field("last_name")
     private String lastName;
+
+    @Indexed
+    @Field("email")
     private String email;
+
+    @Field("password")
     private String password;
 
     @Transient

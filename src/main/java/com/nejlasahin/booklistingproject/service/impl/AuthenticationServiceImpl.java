@@ -99,12 +99,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .build();
 
         Set<Role> roles = new HashSet<>();
-        Role modRole = roleRepository.findByName(RoleNameEnum.valueOf(request.getRoleName()))
+        Role role = roleRepository.findByName(RoleNameEnum.valueOf(request.getRoleName()))
                 .orElseThrow(() -> {
                     logger.error("{} role not found!", request.getRoleName());
                     throw new RoleNotFoundException(RoleErrorMessage.ROLE_NOT_FOUND.getMessage());
                 });
-        roles.add(modRole);
+        roles.add(role);
 
         user.setRoles(roles);
         userRepository.save(user);

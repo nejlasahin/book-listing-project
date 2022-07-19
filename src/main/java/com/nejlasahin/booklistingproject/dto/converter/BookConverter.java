@@ -33,7 +33,7 @@ public class BookConverter {
 
     public Book convertToBook(Book book, BookRequest request) {
         if (book == null || request == null) {
-            return book;
+            return null;
         }
 
         return Book.builder()

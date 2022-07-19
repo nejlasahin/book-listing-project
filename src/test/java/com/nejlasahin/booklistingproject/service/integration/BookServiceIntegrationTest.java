@@ -6,7 +6,7 @@ import com.nejlasahin.booklistingproject.model.Role;
 import com.nejlasahin.booklistingproject.model.User;
 import com.nejlasahin.booklistingproject.model.enumeration.RoleNameEnum;
 import com.nejlasahin.booklistingproject.security.JwtUserDetails;
-import com.nejlasahin.booklistingproject.service.BookService;
+import com.nejlasahin.booklistingproject.service.impl.BookServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +27,10 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class BookServiceTest {
+public class BookServiceIntegrationTest {
 
     @Autowired
-    BookService bookService;
+    BookServiceImpl bookService;
 
     @Test
     public void shouldReturnBooks_WhenGetAll() {

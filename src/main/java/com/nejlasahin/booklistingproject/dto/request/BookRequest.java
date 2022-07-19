@@ -18,7 +18,7 @@ public class BookRequest {
     private String title;
 
     @NotNull(message = "totalPages cannot be null")
-    @Positive(message = "totalPages be a positive number.")
+    @Positive(message = "totalPages be positive number.")
     private Integer totalPages;
 
     @NotNull(message = "isbn cannot be null")

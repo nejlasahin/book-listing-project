@@ -22,7 +22,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class BookControllerTest {
+public class BookControllerUnitTest {
 
     @InjectMocks
     BookController bookController;

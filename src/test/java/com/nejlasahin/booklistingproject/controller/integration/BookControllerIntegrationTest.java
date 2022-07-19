@@ -20,14 +20,14 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
 @AutoConfigureMockMvc
 @RunWith(SpringRunner.class)
-public class BookControllerTest {
+public class BookControllerIntegrationTest {
 
     @Autowired
     MockMvc mockMvc;
 
     @Test
     @WithMockUser(authorities = {"ROLE_READER"})
-    public void shouldReturnBooks_WhenGetAll_AndRoleNameIsReaderOrAuthor() throws Exception {
+    public void shouldReturnBooks_WhenGetAll_AndRoleNameIsReader() throws Exception {
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
                 .get(BookEndpoint.BASE_PATH + BookEndpoint.GET_ALL)
                 .contentType(MediaType.APPLICATION_JSON);

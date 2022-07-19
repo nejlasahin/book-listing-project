@@ -1,7 +1,9 @@
 package com.nejlasahin.booklistingproject.exception.enumeration;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
 @AllArgsConstructor
 public enum UserErrorMessage {
     EMAIL_IS_ALREADY("Email is already taken!"),
@@ -10,8 +12,4 @@ public enum UserErrorMessage {
     USERNAME_IS_ALREADY("Username is already taken!");
 
     private String message;
-
-    public String getMessage() {
-        return message;
-    }
 }
